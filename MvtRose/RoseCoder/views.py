@@ -19,7 +19,7 @@ def familia1(request):
     return HttpResponse(texto1)
 
 def familia2(request):
-    familiar2 = Familia(nombre= "Roseangel", apellido= "Bazan", edad= 33, pais_de_residencia ="Argentina" )
+    familiar2 = Familia(nombre= "Rosseangel", apellido= "Bazan", edad= 33, pais_de_residencia ="Argentina" )
     familiar2.save()
     texto=f"Se guradaron los datos siguientes: nombre: {familiar2.nombre}, apellido: {familiar2.apellido}, edad: {familiar2.edad}, pais donde reside {familiar2.pais_de_residencia}"
     return HttpResponse(texto)
