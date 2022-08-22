@@ -3,6 +3,7 @@ from django.db import models
 
 
 # Create your models here.#modelos
+#mi clase modelo
 
 class Familia(models.Model):
     nombre= models.CharField(max_length=30)
