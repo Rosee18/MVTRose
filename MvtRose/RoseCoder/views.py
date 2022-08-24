@@ -1,29 +1,24 @@
-from .models import Familia
 from django.http import HttpResponse 
 from django.shortcuts import render
 from django.template import loader
+from .models import Familiares, Familias
 
 # Create your views here.
 
-def familia(request):
-    familiar = Familia(nombre= "Rainier", apellido= "Bazan", edad= 33, pais_de_residencia ="Chile" )
-    familiar.save()
-    texto=f"Se guradaron los datos siguientes: nombre: {familiar.nombre}, apellido: {familiar.apellido}, edad: {familiar.edad}, pais donde reside {familiar.pais_de_residencia}"
-    return HttpResponse(texto)
+def familias(request):
 
+    fami1 = Familias("Roseangel", "bazan", 33 )
+    fami2 = Familias ("jose","bazan",31)
+    fami3 = Familias("Mirna", "bazan", 34)
+    
+    text1 = (f"Nombre: {fami1.nombre}, apellido: \n {fami1.ap}, edad: {fami1.edad}  ")
 
-def familia1(request):
-    familiar1 = Familia(nombre= "Mirna", apellido= "Bazan", edad= 29, pais_de_residencia ="USA" )
-    familiar1.save()
-    texto1=f"Se guradaron los datos siguientes: nombre: {familiar1.nombre}, apellido: {familiar1.apellido}, edad: {familiar1.edad}, pais donde reside {familiar1.pais_de_residencia}"
-    return HttpResponse(texto1)
+    text2 = (f" Nombre: {fami2.nombre}, apellido: {fami2.ap}, edad: {fami2.edad} \n ")
 
-def familia2(request):
-    familiar2 = Familia(nombre= "Rosseangel", apellido= "Bazan", edad= 33, pais_de_residencia ="Argentina" )
-    familiar2.save()
-    texto=f"Se guradaron los datos siguientes: nombre: {familiar2.nombre}, apellido: {familiar2.apellido}, edad: {familiar2.edad}, pais donde reside {familiar2.pais_de_residencia}"
-    return HttpResponse(texto)
+    text3 = (f"Nombre: {fami3.nombre}, apellido: {fami3.ap}, edad: {fami3.edad} \n ")
 
+    text_f = (text1,text2,text3)
+    return HttpResponse(text_f)
 
 
 
@@ -37,6 +32,9 @@ def familiares(resquest):
     plantilla = loader.get_template('Template.html')
     docu= plantilla.render(diccionarios)
     return HttpResponse(docu)
+
+
+
 
 
 

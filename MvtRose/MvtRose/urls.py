@@ -15,12 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from RoseCoder.views import familia, familia1, familiares, familia2
+from RoseCoder.views import familiares, familias
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('familia/', familia, name=""),
+    path('familias/', familias, name=""),
     path('familiares/', familiares, name=""),
-    path('familia1/', familia1, name=""),
-    path('familia2/', familia2, name=""),
 ]
