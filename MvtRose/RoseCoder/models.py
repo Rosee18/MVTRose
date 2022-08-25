@@ -13,6 +13,7 @@ class Familiares(models.Model):
     apellido = models.CharField(max_length=30)
     edad = models.IntegerField(default=1)
     pais_de_residencia = models.CharField(max_length=30)
+    fn= models.DateTimeField()
 
 
 #Nueva clase agregada

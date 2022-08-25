@@ -27,8 +27,9 @@ def familiares(resquest):
     nom= "Rainier"
     ap= "bazan"
     edad = 34
+    fecha_nacimiento = "1984-08-22"
    
-    diccionarios = {"nombre":nom, "apellido":ap, "edad":edad}
+    diccionarios = {"nombre":nom, "apellido":ap, "edad":edad, "fecha":fecha_nacimiento}
     plantilla = loader.get_template('Template.html')
     docu= plantilla.render(diccionarios)
     return HttpResponse(docu)
